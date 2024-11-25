@@ -1,0 +1,78 @@
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Sección superior con dos columnas */
+.top-section {
+    display: flex;
+    gap: 20px;
+}
+
+/* Panel izquierdo y derecho */
+.left-panel,
+.right-panel {
+    flex: 1;
+    /* Ocupan el mismo espacio */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: var(--color-primary);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Sección inferior */
+.bottom-section {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: var(--color-primary);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Botones */
+button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: black;
+    background-color: var(--color-primary-dark);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-tertiary);
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+
+
+
+@media (max-width: 1000px) {
+    .top-section {
+        flex-direction: column;
+    }
+
+    .left-panel,
+    .right-panel {
+        flex: none;
+        margin-bottom: 20px;
+    }
+}

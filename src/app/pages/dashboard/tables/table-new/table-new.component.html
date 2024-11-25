@@ -1,0 +1,31 @@
+<!-- Encabezado del dashboard -->
+<app-header-dashboard />
+
+<!-- Contenedor principal para la creación de una nueva mesa -->
+<div class="container my-4 p-5">
+    <!-- Título de la sección -->
+    <h3 class="">Crear nueva mesa</h3>
+
+    <!-- Formulario para crear una mesa -->
+    <form [formGroup]="form" (ngSubmit)="ngSubmit()">
+        <!-- Campo para ingresar el número de la mesa -->
+        <label for="numero-mesa">Numero:</label>
+        <input type="number" formControlName="number" class="form-control" min="1" id="numero-mesa">
+
+        <!-- Campo para ingresar la capacidad de la mesa -->
+        <label for="numero-mesa">Capacidad:</label>
+        <input type="number" formControlName="capacity" class="form-control" min="1" id="numero-mesa">
+
+        <!-- Campo para seleccionar la ubicación de la mesa -->
+        <label class="" for="ubicacion">Ubicación</label>
+        <select formControlName="location" class="form-control" id="ubicacion">
+            <option value="" selected disabled>Seleccione una opción</option>
+            <option value="outside">Terraza</option>
+            <option value="inside">Salón</option>
+        </select>
+
+        <!-- Botón de envío -->
+        <input type="submit" value="Enviar" class="btn mt-5" [disabled]="!form.valid">
+        <!-- Deshabilitado si el formulario no es válido -->
+    </form>
+</div>

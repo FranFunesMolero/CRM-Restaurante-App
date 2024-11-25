@@ -1,0 +1,81 @@
+<!-- Contenedor principal con fondo específico para la sección -->
+<div class="bg-food">
+
+    <!-- Encabezado de la página -->
+    <header class="mb-3">
+        <app-header-dashboard />
+    </header>
+
+    <!-- Contenedor general para la sección -->
+    <div class="container p-3 mb-3">
+        <div class="row">
+            <!-- Sección de Usuarios Registrados -->
+            <div class="col-12 col-md-6">
+                <div class="card shadow-sm mb-4 usuarios">
+                    <div class="card-body">
+                        <!-- Título de la sección -->
+                        <h2 class="text-center mb-4">Usuarios registrados</h2>
+                        <!-- Lista de nuevos usuarios -->
+                        <div class="row g-3">
+                            @for (user of users; track user.id) {
+                            <app-new-users-card [user]="user"></app-new-users-card>
+                            }
+                        </div>
+                        <!-- Botón para ver todos los usuarios registrados -->
+                        <div class="text-center mt-3 boton-suelto">
+                            <a [routerLink]="['/dashboard', 'registered-users']" class="btn btn-primary">Ver todos los
+                                usuarios</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sección de Reseñas -->
+            <div class="col-12 col-md-6 reseñas">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <!-- Título de la sección -->
+                        <h2 class="text-center mb-4">Reseñas</h2>
+                        <!-- Lista de reseñas -->
+                        <div class="row">
+                            @for (review of reviews; track review) {
+                            <app-review-card [rating]="review.rating" [comment]="review.comment" />
+                            }
+                        </div>
+                        <!-- Botón para ver todas las reseñas -->
+                        <div class="text-center mt-3">
+                            <a [routerLink]="['/dashboard', 'reviews']" class="btn btn-primary">Ver todas las
+                                reseñas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección de Próximas Reservas -->
+        <div class="card shadow-sm p-4 mt-4 reservas">
+            <div class="card-body">
+                <!-- Título de la sección -->
+                <h2 class="text-center mb-4">Reservas Hoy</h2>
+                <!-- Mensaje si no hay reservas -->
+                @if(!reservations.length) {
+                <p class="text-center">No hay reservas hoy</p>
+                }
+                <!-- Lista de reservas -->
+                <div class="row">
+                    @for(reservation of reservations; track reservation.id) {
+                    <div class="col-12 col-lg-6 col-md-12 col-ms-12 mb-2">
+                        <!-- Tarjeta de reserva -->
+                        <app-reservations-card [reservation]="reservation"></app-reservations-card>
+                    </div>
+                    }
+                </div>
+                <!-- Botón para ver todas las reservas -->
+                <div class="text-center mt-3">
+                    <a [routerLink]="['/dashboard', 'next-reservations']" class="btn btn-primary">Ver todas las
+                        reservas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

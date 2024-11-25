@@ -1,0 +1,30 @@
+.mesas {
+    background-color: var(--bg-white);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 2.5rem;
+    text-align: center;
+
+    p {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+
+    button {
+        width: 40%;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: var(--color-black);
+        background-color: var(--color-primary-dark);
+        padding: 5px;
+        border-radius: 10px;
+        margin-top: 10px;
+        border-color: transparent;
+    }
+
+    button:hover {
+        background-color: var(--color-tertiary);
+        color: white;
+    }
+}

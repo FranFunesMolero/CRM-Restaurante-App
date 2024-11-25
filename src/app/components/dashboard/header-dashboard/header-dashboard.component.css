@@ -1,0 +1,30 @@
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: var(--color-primary-dark);
+    font-family: var(--font-primary);
+
+    .navbar-nav {
+        margin: auto;
+    }
+}
+
+#navbarNav {
+    ul {
+        margin: auto;
+        justify-content: space-between;
+    }
+}
+
+
+.nav-item .btn {
+    color: black;
+    border: none;
+    margin: 0 1rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-family: var(--font-nav);
+}
+
+.nav-item .btn:hover {
+    background-color: white;
+}

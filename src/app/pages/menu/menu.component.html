@@ -1,0 +1,116 @@
+<!-- Encabezado principal -->
+<app-header />
+
+<!-- Contenedor principal del menú -->
+<div id="body-menu" class="container my-5">
+    <!-- Imagen y título del menú del día -->
+    <img src="./Leaf.svg" alt="Una rama de olivo con hojas">
+    <h2 class="text-center mb-4">Menú del Día: {{data?.name }}</h2>
+    <p>
+        Descubre una variedad de opciones pensadas para todos los gustos. Preparado todo con dedicación para que
+        disfrutes de una experiencia deliciosa.
+        Elige lo que más te apetezca y déjanos sorprenderte. ¡Buen provecho!
+    </p>
+
+    <!-- Acordeón con categorías del menú -->
+    <div class="accordion" id="menuAccordion">
+        <!-- Categoría 1: Entrantes -->
+        <div class="accordion-item">
+            <h3 class="accordion-header" id="headingEntrantes">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseEntrantes" aria-expanded="true" aria-controls="collapseEntrantes">
+                    Entrantes
+                </button>
+            </h3>
+            <div id="collapseEntrantes" class="accordion-collapse collapse show" aria-labelledby="headingEntrantes"
+                data-bs-parent="#menuAccordion">
+                <div class="accordion-body">
+                    <!-- Lista de platillos en la categoría Entrantes -->
+                    @for (starter of starters; track starter.id) {
+                    <div class="row mb-3">
+                        <div class="col-10">
+                            <h5>{{starter.name}}</h5>
+                            <p class="text-muted">{{starter.description}}</p>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Categoría 2: Platos Principales -->
+        <div class="accordion-item">
+            <h3 class="accordion-header" id="headingPlatosPrincipales">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsePlatosPrincipales" aria-expanded="false"
+                    aria-controls="collapsePlatosPrincipales">
+                    Platos Principales
+                </button>
+            </h3>
+            <div id="collapsePlatosPrincipales" class="accordion-collapse collapse"
+                aria-labelledby="headingPlatosPrincipales" data-bs-parent="#menuAccordion">
+                <div class="accordion-body">
+                    <!-- Lista de platillos en la categoría Platos Principales -->
+                    @for (main of mainDishes; track main.id) {
+                    <div class="row mb-3">
+                        <div class="col-10">
+                            <h5>{{main.name}}</h5>
+                            <p class="text-muted">{{main.description}}</p>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Categoría 3: Postres -->
+        <div class="accordion-item">
+            <h3 class="accordion-header" id="headingPostres">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsePostres" aria-expanded="false" aria-controls="collapsePostres">
+                    Postres
+                </button>
+            </h3>
+            <div id="collapsePostres" class="accordion-collapse collapse" aria-labelledby="headingPostres"
+                data-bs-parent="#menuAccordion">
+                <div class="accordion-body">
+                    <!-- Lista de platillos en la categoría Postres -->
+                    @for (dessert of desserts; track dessert.id) {
+                    <div class="row mb-3">
+                        <div class="col-10">
+                            <h5>{{dessert.name}}</h5>
+                            <p class="text-muted">{{dessert.description}}</p>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Categoría 4: Precio y Suplementos -->
+        <div class="accordion-item">
+            <h3 class="accordion-header" id="headingPrecio">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsePrecio" aria-expanded="false" aria-controls="collapsePrecio">
+                    Precio y Suplementos
+                </button>
+            </h3>
+            <div id="collapsePrecio" class="accordion-collapse collapse" aria-labelledby="headingPrecio"
+                data-bs-parent="#menuAccordion">
+                <div class="accordion-body">
+                    <!-- Información sobre precios y suplementos -->
+                    <h5>Precios</h5>
+                    <p class="text-muted">El precio del menú es de {{data?.price}} €.</p>
+                    <h5>Suplementos</h5>
+                    <p class="text-muted">
+                        El pan y el agua son gratis, pero las tostadas, el vino y refrescos tienen un suplemento a
+                        consultar con el maître.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pie de página -->
+<app-footer />

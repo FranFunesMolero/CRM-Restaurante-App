@@ -1,0 +1,46 @@
+<!-- Lista no ordenada para mostrar información de la reserva -->
+<ul class="list-unstyled">
+    <!-- Contenedor principal de la información de la reserva -->
+    <div class="info-container">
+        <!-- Sección de información del usuario -->
+        <div class="user-info">
+            <!-- Nombre y apellido del usuario -->
+            <li class="fs-5">{{reservation.name + " " + reservation.surname}}</li>
+            <!-- Fecha de la reserva, formateada -->
+            <li><strong>{{reservation.date | date: 'dd/MM/yyyy'}}</strong></li>
+            <!-- Hora de la reserva con un filtro personalizado 'traductor' -->
+            <li><strong>{{reservation.time | traductor}}</strong></li>
+        </div>
+
+        <!-- Sección de información de la reserva -->
+        <div class="reservation-info">
+            <!-- Información adicional sobre la reserva -->
+            <div>
+                <!-- Mesa asignada, procesada con un filtro personalizado 'tables' -->
+                <li>Mesa {{reservation.tables | tables}}</li>
+                <!-- Número de comensales -->
+                <li>Comensales {{reservation.guests}}</li>
+                <!-- Estado de la reserva, traducido con un filtro personalizado 'traductor' -->
+                <li>Estado: {{reservation.status | traductor}}</li>
+            </div>
+        </div>
+
+        <!-- Sección de botones para gestionar el estado de la reserva -->
+        <div class="buttons">
+            <!-- Botón para cancelar la reserva -->
+            <button (click)="changeStatus($event)" class="btn cancelar" value="cancelled"
+                [disabled]="reservation.status === 'cancelled'">Cancelar
+            </button>
+            <!-- Botón para confirmar la reserva -->
+            <button (click)="changeStatus($event)" class="btn confirmar" value="confirmed"
+                [disabled]="reservation.status === 'confirmed'">Confirmar
+            </button>
+            <!-- Botón para completar la reserva, visible solo para administradores -->
+            @if( isUserAdmin() ) {
+            <button (click)="changeStatus($event)" class="btn completar" value="completed"
+                [disabled]="reservation.status === 'completed'">Completar
+            </button>
+            }
+        </div>
+    </div>
+</ul>

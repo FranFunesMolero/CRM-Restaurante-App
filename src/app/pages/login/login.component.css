@@ -1,0 +1,104 @@
+/* Custom gradient background for login form */
+.gradient-custom-2 {
+    /* Default background color for older browsers */
+    background-image: url('../../../../public/images/login.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 1);
+    pointer-events: none;
+}
+
+#logoAndTitle {
+    h4 {
+        font-family: 'Poiret One';
+        font-weight: 600;
+        font-size: 40px;
+        background-color: rgb(227, 203, 166, 0.2);
+
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+        border: 2px solid rgba(0, 0, 0, 0.6);
+    }
+
+    p {
+        font-family: 'Gowun Dodum', sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+
+    }
+}
+
+.text-white {
+    font-family: 'Poiret One';
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 15px;
+    background-color: rgba(7, 7, 7, 0.6);
+    font-weight: bold;
+}
+
+
+#registerNewAccount {
+    p {
+        font-family: 'Gowun Dodum', sans-serif;
+        font-weight: 400;
+        font-size: 17px;
+    }
+
+    button {
+        font-family: 'Poiret One', cursive;
+        font-weight: 600;
+        font-size: 18px;
+        margin: 5px 10px;
+        background-color: var(--color-primary-dark);
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+        background-color: var(--color-tertiary);
+        color: white;
+    }
+}
+
+#loginButton {
+    button {
+        font-family: 'Poiret One', cursive;
+        font-weight: 600;
+        font-size: 18px;
+        padding: 15px 0px;
+        background-color: var(--color-primary-dark);
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    }
+}
+
+#loginButton:hover {
+    button {
+        background-color: var(--color-tertiary);
+        color: white;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    }
+}
+
+
+/* Input email */
+#form2Example22:focus,
+#form2Example11:focus {
+    border-color: var(--color-primary-dark);
+    box-shadow: 0 0 0 0.3rem rgba(255, 132, 104, 0.25);
+}
+
+
+/* Make form take full viewport height on tablets and larger */
+@media (min-width: 768px) {
+    .gradient-form {
+        height: 100vh;
+    }
+}
+
+/* Add rounded corners on larger screens */
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: 0.3rem;
+        border-bottom-right-radius: 0.3rem;
+    }
+}

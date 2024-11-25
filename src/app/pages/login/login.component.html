@@ -1,0 +1,90 @@
+<!-- Encabezado -->
+<header>
+  <app-header />
+</header>
+
+<!-- Sección principal con fondo degradado -->
+<section class="h-100 gradient-form">
+  <div class="container py-5 h-100">
+    <!-- Fila centralizada vertical y horizontalmente -->
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <!-- Tarjeta con bordes redondeados -->
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+
+            <!-- Sección del formulario de login -->
+            <form [formGroup]="loginForm" class="col-lg-6" (ngSubmit)="onSubmit()">
+              <div class="card-body p-md-5 mx-md-4">
+
+                <!-- Mensaje de introducción -->
+                <p>Ingresa tus datos para continuar</p>
+
+                <!-- Campo de entrada para el email -->
+                <div class="form-outline mb-4">
+                  <input type="email" formControlName="email" id="form2Example11" class="form-control"
+                    placeholder="Email address">
+
+                  <!-- Mensajes de validación para el email -->
+                  @if (checkValidation('email')) {
+                  <div class="text-danger">
+                    <small>El email es requerido</small>
+                  </div>
+                  }
+                </div>
+
+                <!-- Campo de entrada para la contraseña -->
+                <div class="form-outline mb-4">
+                  <input type="password" formControlName="password" id="form2Example22" class="form-control"
+                    placeholder="Password">
+
+                  <!-- Mensajes de validación para la contraseña -->
+                  @if (checkValidation('password')) {
+                  <div class="text-danger">
+                    <small>La contraseña debe tener al menos 8 caracteres</small>
+                  </div>
+                  }
+                </div>
+
+                <!-- Botón de inicio de sesión -->
+                <div class="text-center pt-1 mb-5 pb-1 d-grid gap-2" id="loginButton">
+                  <button class="btn btn-block fa-lg mb-3" type="submit" [disabled]="loginForm.invalid">
+                    Log in
+                  </button>
+                </div>
+
+                <!-- Sección para registro de nuevos usuarios -->
+                <div class="d-flex align-items-center justify-content-center pb-4" id="registerNewAccount">
+                  <p class="mb-0 me-2">¿No estás registrado?</p>
+                  <button type="button" class="btn" [routerLink]="['/register']">
+                    Crear cuenta
+                  </button>
+                </div>
+
+              </div>
+            </form>
+
+            <!-- Sección informativa al lado del formulario -->
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <!-- Título de la sección informativa -->
+                <h4 class="mb-4"><strong>Somos más que un restaurante</strong></h4>
+                <!-- Descripción de la experiencia del restaurante -->
+                <p class="small mb-0">
+                  Bienvenidos a Frontend Feast, un lugar donde la tradición y el buen gusto se fusionan para ofrecerle
+                  una experiencia única.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <app-footer />
+</footer>

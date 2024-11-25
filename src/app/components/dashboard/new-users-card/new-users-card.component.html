@@ -1,0 +1,32 @@
+<!-- Tarjeta principal que contiene la información del usuario -->
+<div class="card border-2 rounded-3" id="menu-card">
+    <!-- Cuerpo de la tarjeta con estilos de flexbox para organizar el contenido -->
+    <div class="card-body d-flex justify-content-between">
+        <!-- Lista no ordenada para mostrar los datos del usuario -->
+        <ul class="list-unstyled row ">
+            <!-- Cada elemento de la lista contiene información del usuario -->
+            <li class="col-12">
+                <!-- Sección para mostrar el nombre del usuario -->
+                <div>
+                    <strong>Nombre:</strong><span class="text-break"> {{ user.name }} {{ user.surname }}</span>
+                </div>
+                <!-- Sección para mostrar el email del usuario -->
+                <div>
+                    <strong>Email:</strong><span class="text-break"> {{ user.email }}</span>
+                </div>
+                <!-- Sección para mostrar el teléfono del usuario -->
+                <div>
+                    <strong>Phone:</strong><span class="text-break"> {{ user.phone }}</span>
+                </div>
+                <!-- Sección para mostrar el rol del usuario -->
+                <div>
+                    <strong>Role:</strong><span class="text-break"> {{ user.role }}</span>
+                </div>
+                <!-- Sección para mostrar el ID del usuario -->
+                <div>
+                    <strong>Id:</strong><span class="text-break"> {{ user.id }}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

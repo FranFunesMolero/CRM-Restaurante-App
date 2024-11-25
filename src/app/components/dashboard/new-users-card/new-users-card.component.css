@@ -1,0 +1,14 @@
+#menu-card {
+    background-color: var(--color-primary);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: 10px;
+    display: flex;
+    justify-content: center;
+
+}
+
+li>div {
+    margin: 10px;
+}

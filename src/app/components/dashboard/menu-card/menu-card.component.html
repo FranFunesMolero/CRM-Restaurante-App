@@ -1,0 +1,22 @@
+<!-- Contenedor principal del componente -->
+<div class="container-fluid border border-1 rounded-3" id="menu-card">
+    <div class="row ">
+        <!-- Columna para la información del menú -->
+        <div class="col ">
+            <ul class="list-unstyled d-flex gap-4 align-items-center h-100">
+                <!-- Lista de detalles del menú -->
+                <li>{{ menu.id}}</li>
+                <li class="menu-date">{{ menu.date | date: 'dd/MM/yyyy' }}</li>
+                <li class="menu-name">{{ menu.name}}</li>
+            </ul>
+        </div>
+        <!-- Columna para las acciones del menú -->
+        <div class="col" style="height: 50px">
+            <ul class="list-unstyled d-flex gap-2 justify-content-end align-items-center h-100">
+                <li><a class="btn" [routerLink]="['view', menu.id]">Ver</a></li>
+                <li><a class="btn" [routerLink]="['update', menu.id]">Actualizar</a></li>
+                <li><a class="btn" (click)="deleteMenu(menu.id)">Borrar</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

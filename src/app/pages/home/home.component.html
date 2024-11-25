@@ -1,0 +1,114 @@
+<!-- Encabezado -->
+<header>
+    <app-header />
+</header>
+
+<div class="body">
+    <!-- Sección Título -->
+    <section class="row">
+        <div class="col-12 d-flex justify-content-center align-items-center hero">
+            <!-- Título principal del sitio -->
+            <h1 id="titulo" class="text-center p-5 m-2">
+                ¡Bienvenido a Frontend Feast!
+            </h1>
+        </div>
+    </section>
+    <!-- Fin Título -->
+
+    <!-- Sección Gastronomía -->
+    <section class="container my-4 gastronomia">
+        <div class="row my-4">
+            <!-- Imagen destacada de la sección Gastronomía -->
+            <figure class="col-md-6 p-0 m-0">
+                <img src="./images/indian-food.jpg" class="img-fluid rounded w-100 h-100"
+                    alt="Frontend Feast Gastronomia" id="imgGastro">
+            </figure>
+
+            <!-- Contenido textual sobre la experiencia gastronómica -->
+            <div class="col-md-6 text">
+                <div>
+                    <h2 class="mb-4 h1">Gastronomía</h2>
+                    <p>
+                        Te ofrecemos una experiencia culinaria que combina lo mejor de la cocina tradicional y
+                        contemporánea con ingredientes frescos.
+                    </p>
+                    <p>
+                        Los chefs transforman recetas en obras de arte, complementadas con una selección de vinos y
+                        cócteles.
+                    </p>
+                    <p>
+                        El ambiente acogedor y el servicio atento garantizan una visita inolvidable, donde no solo se
+                        come, sino que se disfrutan y celebran momentos memorables.
+                    </p>
+                    <p>
+                        <strong>¡Te esperamos!</strong>
+                    </p>
+                </div>
+                <!-- Botón para redirigir al menú -->
+                <div class="text-center h-100 d-flex justify-content-center align-items-center">
+                    <button class="btn" [routerLink]="['/menu']">Ver menú</button>
+                </div>
+            </div>
+        </div>
+        <!-- Fin Gastronomía -->
+
+        <!-- Sección Regístrate -->
+        <div class="row my-4">
+            <!-- Texto promocional para invitar al registro -->
+            <div class="col-md-6 text">
+                <h2 class="unete">Únete a Nuestra Familia Gastronómica</h2>
+                <p>
+                    En Frontend Feast, no solo reservamos una mesa para ti, te damos la bienvenida a nuestra
+                    familia.
+                </p>
+                <p>
+                    Regístrate y sé parte de nuestra comunidad, donde cada visita es un momento especial y cada cliente,
+                    un miembro más de nuestro hogar.
+                </p>
+                <button class="btn mt-4" [routerLink]="['/register']">Regístrate</button>
+            </div>
+            <!-- Imagen complementaria -->
+            <div class="col-md-6">
+                <img src="./images/thai-food-green-curry-chicken-ai-generated-image.jpg"
+                    class="img-fluid rounded w-100 h-100" alt="Imagen plato" id="imgGastro">
+            </div>
+        </div>
+    </section>
+    <!-- Fin Regístrate -->
+
+    <!-- Sección Reseñas -->
+    <section class="container mt-4 mb-4" id="sectionReseñas">
+        <div class="row mt-4 mb-4 px-5">
+            <!-- Encabezado de la sección -->
+            <div class="col-12 d-flex flex-column justify-content-center" id="reseñas">
+                <h2 class="text-center mb-4">Últimas Reseñas</h2>
+            </div>
+            <!-- Iteración para mostrar tarjetas de reseñas -->
+            <div class="row">
+                @for (review of reviews; track review.id) {
+                <div class="col-12 col-md-4">
+                    <app-review-card [rating]="review.rating" [comment]="review.comment">
+                    </app-review-card>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+    <!-- Fin Reseñas -->
+
+    <!-- Sección Reserva -->
+    <section class="container-fluid mt-5 position-relative reserva">
+        <div class="row">
+            <!-- Botón para redirigir a la página de reservas -->
+            <div class="col-12 text-center d-flex justify-content-center align-items-center text-white">
+                <button class="btn m-5" [routerLink]="['/reservations']">Reservar Ahora</button>
+            </div>
+        </div>
+    </section>
+    <!-- Fin Reserva -->
+</div>
+
+<!-- Footer -->
+<footer>
+    <app-footer />
+</footer>

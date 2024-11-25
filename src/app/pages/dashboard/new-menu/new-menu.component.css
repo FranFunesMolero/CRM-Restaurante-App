@@ -1,0 +1,37 @@
+.card {
+    background-color: var(--color-primary);
+    /* font-family: 'Montserrat', sans-serif; */
+    border-radius: 10px;
+}
+
+.form-outline {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+h3 {
+    font-weight: 500;
+    border-bottom: 1px solid #3c3e40;
+    padding-bottom: 10px;
+}
+
+.btn {
+    width: 100%;
+    height: 3rem;
+    font-size: 1.5rem;
+    background-color: var(--color-primary-dark);
+    border: 1px solid var(--color-secondary-dark);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-color: transparent;
+}
+
+.btn:hover {
+    background-color: var(--color-tertiary);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}

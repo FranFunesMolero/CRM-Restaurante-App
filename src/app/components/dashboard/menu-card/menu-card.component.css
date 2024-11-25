@@ -1,0 +1,25 @@
+#menu-card {
+    background-color: var(--color-primary);
+    font-family: 'Gowun Dodum', cursive;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.btn {
+    background-color: var(--color-primary-dark);
+    color: black;
+}
+
+.btn:hover {
+    background-color: var(--color-tertiary);
+    color: white;
+}
+
+.menu-date {
+    font-weight: 400;
+}
+
+.menu-name {
+    font-weight: 600;
+}

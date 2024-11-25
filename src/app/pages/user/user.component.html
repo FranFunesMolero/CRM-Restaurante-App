@@ -1,0 +1,107 @@
+<!-- Componente del encabezado de la aplicación -->
+<app-header />
+
+<!-- Contenedor principal de la página -->
+<div class="container">
+    <!-- Sección superior que contiene el formulario de edición de usuario y las reservas -->
+    <div class="top-section">
+        <!-- Panel izquierdo: Formulario para editar información del usuario -->
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="left-panel">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card-body">
+                        <!-- Título del formulario -->
+                        <h2 class="mb-4">Editar mi información</h2>
+
+                        <!-- Campo de nombre -->
+                        <div class="form-outline mb-4 row">
+                            <label for="nombre" class="col-6 col-form-label">Introduce tu nombre</label>
+                            <div class="col-6">
+                                <input type="text" id="nombre" class="form-control" formControlName="name"
+                                    placeholder="Nombre">
+                            </div>
+                        </div>
+
+                        <!-- Campo de apellido -->
+                        <div class="form-outline mb-4 row">
+                            <label for="apellido" class="col-6 col-form-label">Introduce tu apellido</label>
+                            <div class="col-6">
+                                <input type="text" id="apellido" class="form-control" formControlName="surname"
+                                    placeholder="Apellido">
+                            </div>
+                        </div>
+
+                        <!-- Campo de teléfono -->
+                        <div class="form-outline mb-4 row">
+                            <label for="telefono" class="col-6 col-form-label">Introduce tu teléfono</label>
+                            <div class="col-6">
+                                <input type="tel" id="telefono" class="form-control" formControlName="phone"
+                                    placeholder="Teléfono">
+                            </div>
+                        </div>
+
+                        <!-- Campo de email -->
+                        <div class="form-outline mb-4 row">
+                            <label for="email" class="col-6 col-form-label">Introduce tu nuevo email</label>
+                            <div class="col-6">
+                                <input type="email" id="email" class="form-control" formControlName="email"
+                                    placeholder="Email">
+                            </div>
+                        </div>
+
+                        <!-- Campo de contraseña -->
+                        <div class="form-outline mb-4 row">
+                            <label for="password" class="col-6 col-form-label">Introduce tu nueva contraseña</label>
+                            <div class="col-6">
+                                <input type="password" id="password" class="form-control" formControlName="password"
+                                    placeholder="Nueva contraseña">
+                            </div>
+                        </div>
+
+                        <!-- Botón para guardar cambios -->
+                        <button type="submit" class="btn">Guardar cambios</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <!-- Panel derecho: Listado de reservas -->
+        <div class="right-panel">
+            <div>
+                <!-- Título de la sección de reservas -->
+                <h2>Reservas</h2>
+
+                <!-- Mensaje si no hay reservas -->
+                @if (reservations.length === 0) {
+                <p class="mt-4">No existe ninguna reserva.</p>
+                }
+
+                <!-- Iteración de reservas y renderizado de tarjetas -->
+                @for(reservation of reservations; track reservation.id){
+                <app-reservations-card [reservation]="reservation"></app-reservations-card>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección inferior: Reseñas -->
+    <div class="bottom-section mb-5">
+        <!-- Título de la sección de reseñas -->
+        <h2>Reseñas</h2>
+
+        <!-- Botón para escribir una nueva reseña -->
+        <div class="button-container mb-4">
+            <button class="btn" [routerLink]="['/create-review']">Escribir una nueva reseña</button>
+        </div>
+
+        <!-- Listado de reseñas -->
+        <div>
+            @for(review of reviews; track review){
+            <app-review-card [rating]="review.rating" [comment]="review.comment"></app-review-card>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Componente del pie de página -->
+<app-footer />

@@ -1,0 +1,13 @@
+section {
+    background-color: var(--color-primary);
+    color: var(--color-black);
+    text-align: center;
+
+    h3 {
+        font-size: 1.7rem;
+    }
+
+    span {
+        /* display: inline-block; */
+    }
+}

@@ -1,0 +1,22 @@
+<!-- Contenedor principal que envuelve la sección de reseñas -->
+<section class="container">
+    <!-- Tarjeta con margen inferior que contiene los detalles de la reseña -->
+    <div class="card mb-3">
+        <div class="card-body">
+            <!-- Condicional: Verifica si debe mostrarse el botón para eliminar -->
+            @if(hasDeleteButton) {
+            <!-- Contenedor flexible para organizar el título y el botón de eliminar -->
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Título de la tarjeta que muestra el ID y el nombre del usuario -->
+                <h5 class="card-title">{{userid}} | {{userName}}</h5>
+                <!-- Botón para eliminar la reseña -->
+                <button class="btn" (click)="deleteReview()">Eliminar</button>
+            </div>
+            }
+            <!-- Texto que muestra la calificación con formato de estrellas -->
+            <p class="card-text">⭐ Rating: {{rating}}/5</p>
+            <!-- Comentario de la reseña -->
+            <p class="card-text">{{comment}} </p>
+        </div>
+    </div>
+</section>

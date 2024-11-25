@@ -1,0 +1,35 @@
+h2 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: var(--bg-black);
+    margin: 0 auto;
+}
+
+.btn {
+    background-color: var(--color-primary-dark);
+    color: var(--bg-black);
+    padding: 1rem;
+    border: 1px solid #00000010;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+.btn:hover {
+    background-color: var(--color-tertiary);
+    color: white;
+}
+
+.card {
+    height: 100%;
+}
+
+@media (width <=768px) {
+    .reseñas {
+        margin-top: 2rem;
+    }
+}

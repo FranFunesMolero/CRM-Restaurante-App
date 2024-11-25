@@ -1,0 +1,110 @@
+<!-- Encabezado de la aplicación -->
+<header>
+  <app-header />
+</header>
+
+<!-- Sección principal del formulario de registro -->
+<section class="h-100 gradient-form">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100 pb-3">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+
+            <!-- Formulario de Registro -->
+            <form [formGroup]="registerForm" class="col-lg-8" (ngSubmit)="onSubmit()">
+              <div class="card-body p-md-5 mx-md-4">
+                <!-- Título del formulario -->
+                <p>
+                  Registrate para crear tu cuenta
+                </p>
+
+                <!-- Campo de Nombre -->
+                <div class="form-outline mb-4">
+                  <input type="text" formControlName="name" id="name" class="form-control"
+                    [class.border-danger]="checkValidation('name')" placeholder="*Name">
+                </div>
+
+                <!-- Campo de Apellido -->
+                <div class="form-outline mb-4">
+                  <input type="text" formControlName="surname" id="surname" class="form-control"
+                    [class.border-danger]="checkValidation('surname')" placeholder="*Surname">
+                </div>
+
+                <!-- Campo de Teléfono -->
+                <div class="form-outline mb-4">
+                  <input type="tel" formControlName="phone" id="phone" class="form-control"
+                    [class.border-danger]="checkValidation('phone')" placeholder="*Phone">
+                </div>
+
+                <!-- Campo de Email -->
+                <div class="form-outline mb-4">
+                  <input type="email" formControlName="email" id="email" class="form-control"
+                    [class.border-danger]="checkValidation('email')" placeholder="*Email address">
+                  <!-- Mensaje de validación de Email -->
+                  @if (checkValidation('email')) {
+                  <div class="text-danger">
+                    <small>El email es requerido</small>
+                  </div>
+                  }
+                </div>
+
+                <!-- Campo de Contraseña -->
+                <div class="form-outline mb-4">
+                  <input type="password" formControlName="password" id="password" class="form-control"
+                    [class.border-danger]="checkValidation('password')" placeholder="*Password">
+                  <!-- Mensaje de validación de Contraseña -->
+                  @if (checkValidation('password')) {
+                  <div class="text-danger">
+                    <small>La contraseña debe tener al menos 8 caracteres</small>
+                  </div>
+                  }
+                </div>
+
+                <!-- Confirmar Contraseña -->
+                <div class="form-outline mb-4">
+                  <input type="password" formControlName="confirmPassword" id="confirmPassword" class="form-control"
+                    [class.border-danger]="checkValidation('confirmPassword')" placeholder="*Confirm Password">
+                  <!-- Mensaje de validación de Confirmar Contraseña -->
+                  @if (!passwordsMatch() && checkValidation('confirmPassword')) {
+                  <div class="text-danger">
+                    <small>Las contraseñas no coinciden</small>
+                  </div>
+                  }
+                </div>
+
+                <!-- Botón de Registro -->
+                <div class="text-center pt-1 mb-5 pb-1 d-grid gap-2" id="SignInButton">
+                  <button class="btn btn-block fa-lg mb-3" type="submit" [disabled]="registerForm.invalid">
+                    Sign in
+                  </button>
+                </div>
+
+                <!-- Enlace para usuarios registrados -->
+                <div class="d-flex align-items-center justify-content-center pb-4" id="registerSection">
+                  <p class="mb-0 me-2">¿Ya tienes una cuenta?</p>
+                  <a class="btn" id="LogInBtn" routerLink="/login">
+                    Ingresar
+                  </a>
+                </div>
+              </div>
+            </form>
+
+            <!-- Sección de Información -->
+            <div class="col-lg-4 d-flex align-items-center gradient-custom-2 rounded-3" id="infoSection">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4 w-100">
+                <h4 class="text-center">Expertos en calidad y experiencia.</h4>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pie de página de la aplicación -->
+<footer>
+  <app-footer />
+</footer>

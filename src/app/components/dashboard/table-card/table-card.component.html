@@ -1,0 +1,26 @@
+<!-- Artículo que representa una mesa -->
+<article class="mesa">
+    <!-- Contenedor de información de la mesa -->
+    <div class="info">
+        <!-- Muestra el número de la mesa -->
+        <span>
+            <strong>Numero</strong>: {{table?.number}}
+        </span>
+        <!-- Formulario para editar la capacidad de la mesa -->
+        <form [formGroup]="form" (ngSubmit)="ngSubmit()">
+            <!-- Etiqueta para el campo de capacidad -->
+            <label for="capacity"><strong>Capacidad</strong></label>
+            <!-- Campo de entrada para modificar la capacidad de la mesa -->
+            <input type="number" formControlName="capacity" id="capacity" placeholder="{{table?.capacity}}">
+        </form>
+    </div>
+
+    <!-- Contenedor de botones de acción -->
+    <div class="buttons">
+        @if (table.future) {
+        <i class="me-3" data-tooltip="Mesa tiene asociada reservas futuras">⚠️</i>
+        }
+        <button class="btn" [disabled]="!form.valid" (click)="ngSubmit()">Editar</button>
+        <button class="btn" (click)="borrar()">Borrar</button>
+    </div>
+</article>

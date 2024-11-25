@@ -1,0 +1,94 @@
+ul {
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    border: 0.5px solid rgb(205, 205, 205);
+
+    padding: 2%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: var(--color-primary);
+    text-align: left;
+
+    li {
+        margin-bottom: 18px;
+    }
+
+}
+
+.buttons {
+    gap: 0.3rem;
+    display: flex;
+    justify-content: start;
+    max-width: 30%;
+
+    button {
+        font-size: 1rem;
+        color: var(--bg-black);
+        border: 1px solid rgb(104, 104, 104);
+
+        &.confirmar {
+            background-color: #bbf6c7c7;
+        }
+
+        &.cancelar {
+            background-color: #f8cbc7;
+        }
+
+        &.completar {
+            background-color: #f8f2d7;
+        }
+    }
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+}
+
+.user-info,
+.reservation-info,
+.buttons {
+    flex: 1;
+    padding: 0 10px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+
+
+@media (width <=760px) {
+    ul {
+        flex-direction: column;
+        align-content: center;
+
+        >div {
+            padding-left: 3%;
+        }
+    }
+}
+
+
+@media (max-width: 440px) {
+    .info-container {
+        flex-direction: column;
+        /* Cambiar a columna en pantallas pequeñas */
+    }
+
+    .user-info,
+    .reservation-info {
+        li {
+            margin-bottom: 5px !important;
+
+        }
+    }
+
+    .buttons {
+        max-width: 100%;
+
+    }
+}

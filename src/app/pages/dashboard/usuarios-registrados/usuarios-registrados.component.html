@@ -1,0 +1,28 @@
+<!-- Encabezado del dashboard -->
+<header>
+    <app-header-dashboard />
+</header>
+
+<!-- Contenedor principal para la gestión de usuarios -->
+<div class="container usuarios-registrados pt-3">
+    <!-- Encabezado de la sección -->
+    <div>
+        <h3 class="my-4">Gestión de Usuarios</h3>
+        <p>Aquí encontrarás un listado de los usuarios registrados en el sistema.</p>
+    </div>
+
+    <!-- Contenedor para la lista de usuarios -->
+    <div class="row justify-content-center">
+        <div class="col-12 g-4 p-5">
+            <!-- Iteración sobre la lista de usuarios -->
+            @for(user of users; track user.id) {
+            <!-- Componente para cada usuario -->
+            <app-users-card [user]="user" (deleteUser)="onDeleteUser()">
+            </app-users-card>
+            }
+        </div>
+    </div>
+
+    <!-- Botón para volver al inicio de la página -->
+    <button id="btn-top" class="btn" (click)="scrollToTop()">↑ Volver Arriba</button>
+</div>

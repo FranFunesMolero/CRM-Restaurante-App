@@ -1,0 +1,29 @@
+<!-- Contenedor principal con estilos de borde, redondeado y espaciado -->
+<div class="container-fluid border border-2 rounded-3 mb-3 p-3" id="menu-card">
+    <!-- Fila flexible que se organiza en una columna para pantallas pequeñas y en una fila para pantallas medianas o mayores -->
+    <div class="row flex-column flex-md-row">
+        <!-- Columna principal para la información del usuario -->
+        <div class="col-12 col-md-9">
+            <!-- Lista no ordenada que muestra los detalles básicos del usuario -->
+            <ul class="list-unstyled d-flex gap-4 align-items-center h-100">
+                <!-- Muestra el ID del usuario -->
+                <li>Id: {{user.id}}</li>
+                <!-- Muestra el nombre completo del usuario -->
+                <li>{{user.name}} {{user.surname}}</li>
+            </ul>
+        </div>
+
+        <!-- Columna secundaria para los botones de acción -->
+        <div class="col-12 col-md-3">
+            <!-- Lista no ordenada con los botones para acciones del usuario -->
+            <ul class="list-unstyled d-flex gap-2 justify-content-end align-items-center h-100">
+                <!-- Botón para navegar a la vista del usuario -->
+                <li><a class="btn" [routerLink]="['/dashboard/users', user.id]">Ver</a></li>
+                <!-- Botón para navegar a la página de edición del usuario -->
+                <li><a class="btn" [routerLink]="['/dashboard/edit-user', user.id]">Actualizar</a></li>
+                <!-- Botón para borrar al usuario -->
+                <li><button class="btn" (click)="onDelete()">Borrar</button></li>
+            </ul>
+        </div>
+    </div>
+</div>

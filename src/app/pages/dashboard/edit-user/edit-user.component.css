@@ -1,0 +1,13 @@
+.row{
+    background-color: var(--color-primary);
+}
+
+.btn{
+    background-color: var(--color-primary-dark);
+    color: var(--color-black);
+}
+
+.btn:hover{
+    background-color: var(--color-tertiary);
+    color: white;
+}

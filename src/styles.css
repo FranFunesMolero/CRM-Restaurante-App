@@ -1,0 +1,60 @@
+/* Poiret One */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Poiret+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Gowun Dodum */
+@import url('https://fonts.googleapis.com/css2?family=Creep  ster&family=Gowun+Dodum&family=Poiret+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Brightsotone font */
+@import url('https://fonts.googleapis.com/css2?family=Birthstone&family=Inspiration&display=swap');
+/* Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* Noto sans font*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* Charm font */
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* Fur the leah */
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+/* DM Serif Text Static */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Fleur+De+Leah&display=swap');
+/* Serif */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Fleur+De+Leah&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* Colores: #F0DEB1 Clarito
+#D6C3A1 Oscuro */
+
+
+
+/* Fuentes para dashboard */
+/* Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Gowun+Dodum&family=Poiret+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Montserrat */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic');
+/* colores de home antiguos: rgba(195, 180, 142, 0.2) */
+/* colores de home antiguos2: rgba(130, 116, 96, 0.5) */
+
+:root {
+    --color-primary: #f3f0e8;
+    --color-primary-dark: #d0cb99;
+    --color-primary-dark-trans: rgba(126, 118, 51, 0.8);
+
+    --color-secondary: #d4ca70;
+    --color-secondary-dark: #d3b167;
+
+    --color-tertiary: #574c42;
+    --color-tertiary-light: #b78846;
+
+    --bg-white: #f5f5f5;
+    --color-black: rgb(28, 28, 28);
+
+    --font-fancy: "Birthstone", cursive;
+    --font-nav: "Libre Caslon Text", serif;
+    --font-primary: "Noto Sans", sans-serif;
+    --font-secondary: "Charm", cursive;
+}
+
+body {
+    background-color: var(--bg-white) !important;
+}
+
+html, body {
+    background-image: url('../public/background-food6.svg');
+    background-repeat: repeat;
+}

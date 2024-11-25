@@ -1,0 +1,47 @@
+<!-- Barra de navegación principal -->
+<nav class="navbar navbar-expand-xl">
+    <!-- Botón de Hamburguesa para pantallas pequeñas -->
+    <button class="navbar-toggler m-3" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isCollapsed"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menú de Navegación -->
+    <div class="collapse navbar-collapse" [class.show]="!isCollapsed" id="navbarNav">
+        <!-- Lista de elementos de navegación -->
+        <ul class="navbar-nav container">
+            <!-- Enlace al Dashboard -->
+            <li class="nav-item">
+                <button class="btn" [routerLink]="['/dashboard']">Dashboard</button>
+            </li>
+            <!-- Enlace a la sección de Menús -->
+            <li class="nav-item">
+                <button class="btn" [routerLink]="['/dashboard', 'menu']">Menús</button>
+            </li>
+            <!-- Enlace a la sección de Usuarios -->
+            <li class="nav-item">
+                <button class="btn" [routerLink]="['/dashboard', 'registered-users']">Usuarios</button>
+            </li>
+            <!-- Enlace a la sección de Mesas -->
+            <li class="nav-item">
+                <button class="btn" [routerLink]="['/dashboard', 'tables']">Mesas</button>
+            </li>
+            <!-- Enlace a la sección de Reservas -->
+            <li class="nav-item">
+                <button class="btn" [routerLink]="['/dashboard', 'next-reservations']">Reservas</button>
+            </li>
+            <!-- Enlace a la sección de Reseñas -->
+            <li class="nav-item">
+                <button class="btn" [routerLink]="['/dashboard', 'reviews']">Reseñas</button>
+            </li>
+            <!-- Enlace para regresar al Restaurante -->
+            <li class="nav-item">
+                <button class="btn" [routerLink]="['/']">Restaurante</button>
+            </li>
+            <!-- Botón para cerrar sesión -->
+            <li class="nav-item">
+                <button class="btn" (click)="logout()">Logout</button>
+            </li>
+        </ul>
+    </div>
+</nav>

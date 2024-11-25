@@ -1,0 +1,58 @@
+.mesa {
+    text-align: left;
+    font-size: 1.1rem;
+    padding: 1rem;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.088);
+    border: 0.1px solid rgba(128, 128, 128, 0.293);
+    border-radius: 5px;
+
+    .info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .buttons {
+        align-content: center;
+    }
+
+    button {
+        margin: 0 0.5rem;
+        background-color: var(--color-secondary);
+        padding: 0.5rem;
+    }
+
+    button:hover {
+        background-color: var(--color-tertiary);
+        color: white;
+    }
+
+    input[type="number"] {
+        margin-left: 10px;
+        width: 70px;
+    }
+}
+
+@media (width <=435px) {
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-content: center;
+
+        .warning {
+            margin-right: 0 !important;
+        }
+    }
+}
+
+[data-tooltip]:hover::after {
+    display: block;
+    position: absolute;
+    content: attr(data-tooltip);
+    border: 1px solid black;
+    background: #eee;
+    padding: .25em;
+}

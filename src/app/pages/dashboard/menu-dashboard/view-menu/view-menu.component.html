@@ -1,0 +1,41 @@
+<!-- Header del dashboard -->
+<app-header-dashboard />
+
+<!-- Sección principal para mostrar las tarjetas del menú -->
+<section class="p-5 my-3 container">
+    <!-- Título del menú -->
+    <h3 class="mb-3">{{ menu.name }}</h3>
+
+    <!-- Información del menú: fecha y precio -->
+    <span class="me-3">
+        <strong>Fecha</strong>:
+        {{ menu.date | onlyDate }} <!-- Filtro para mostrar solo la fecha -->
+    </span>
+    <span>
+        <strong>Precio</strong>:
+        {{ menu.price }}€ <!-- Precio del menú -->
+    </span>
+
+    <!-- Grid para las tarjetas de los platos del menú -->
+    <div class="row g-5 mt-1">
+        <!-- Iteración sobre la lista de platos del menú -->
+        @for (dish of dishes; track dish.id) {
+        <article class="col-12 col-md-6 col-lg-4">
+            <!-- Tarjeta del plato -->
+            <app-menu-card2 [dish]="dish" />
+        </article>
+        }
+    </div>
+</section>
+
+
+<!-- Commented out sections for future use -->
+<!-- Main Dishes Section
+<div class="container-fluid" id="menu-info">
+    <h5 class="text-center mt-5 shadow-sm w-50 mx-auto">Platos principales</h5>
+</div> -->
+
+<!-- Desserts Section 
+<div class="container-fluid" id="menu-info">
+    <h5 class="text-center mt-5 shadow-sm w-50 mx-auto">Postres</h5>
+</div> -->

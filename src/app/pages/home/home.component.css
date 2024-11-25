@@ -1,0 +1,206 @@
+.body {
+    background-color: var(--bg-white);
+    min-height: 100vh;
+    overflow: hidden;
+    font-size: var(--font-size);
+
+}
+
+button {
+    font-family: var(--font-secondary);
+    background-color: var(--color-secondary);
+    color: var(--color-black);
+    margin: 0 auto;
+    width: 200px;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+
+
+button:hover {
+    background-color: var(--color-tertiary);
+    color: white;
+}
+
+.hero {
+    background-image: url('../../../../public/images/header-img.jpg');
+    background-size: cover;
+    background-position: center;
+
+    min-height: 70vh;
+}
+
+
+/* Reservas final pagina */
+.reserva {
+
+    background-image: url('../../../../public/images/interior.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    align-content: center;
+
+
+    .reserva-text {
+        background-color: #0000009d;
+        padding: 30px;
+        border-radius: 10px;
+        color: white;
+        margin: 0 50px;
+
+
+        h2 {
+            color: white;
+            font-weight: 500;
+        }
+
+        p {
+            color: white;
+            font-weight: 300;
+
+        }
+    }
+
+    button {
+        background-color: var(--color-primary-dark);
+        padding: 0.9rem;
+        font-size: 2rem;
+        width: 400px;
+    }
+
+    button:hover {
+        background-color: var(--color-tertiary);
+        color: white;
+    }
+
+}
+
+#titulo {
+    color: var(--color-black);
+    background-color: rgba(226, 219, 205, 0.5);
+    border-radius: 12px;
+
+}
+
+h1 {
+    font-family: var(--font-fancy);
+    font-size: 100px;
+
+}
+
+
+h2 {
+    font-family: var(--font-secondary)
+}
+
+p {
+    font-family: var(--font-primary);
+    color: var(--color-black);
+}
+
+
+#sectionReseñas {
+    background-color: var(--color-primary);
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+.row>* {
+    padding: 0;
+
+    img {
+        width: 100%;
+    }
+}
+
+.gastronomia {
+    margin-top: 10rem;
+
+    .text {
+        padding: 4%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: var(--color-primary);
+
+        .unete {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &>.row {
+        & figure {
+            max-height: 550px;
+        }
+    }
+}
+
+#imgGastro {
+    object-fit: cover;
+}
+
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 50px;
+
+    }
+
+    .reserva-text {
+        padding: 10px;
+    }
+
+    .col-md-6 {
+        flex-direction: column;
+    }
+
+    .col-md-6 img,
+    .col-md-6 .d-flex {
+        height: auto;
+    }
+
+    .col-md-6 img {
+        margin-bottom: 15px;
+    }
+
+    #imgRegistro {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+
+
+    h1 {
+        font-size: 75px;
+    }
+
+    .reserva-text {
+        padding: 15px;
+    }
+
+    .col-md-6 img {
+        margin-right: 15px;
+    }
+
+}
+
+@media (min-width: 1201px) {
+
+
+    h1 {
+        font-size: 100px;
+    }
+
+    .reserva-text {
+        padding: 20px;
+    }
+
+    .col-md-6 img {
+        margin-right: 20px;
+    }
+
+
+}

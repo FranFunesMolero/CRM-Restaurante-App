@@ -1,0 +1,35 @@
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.card {
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+
+#menu-card {
+    background-color: var(--color-primary);
+    font-family: 'Gowun Dodum', cursive;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+
+}
+
+.btn {
+    background-color: var(--color-primary-dark);
+    color: black;
+}
+
+.btn:hover {
+    background-color: var(--color-tertiary);
+    color: white;
+}

@@ -1,0 +1,24 @@
+<!-- Encabezado del dashboard -->
+<app-header-dashboard />
+
+<!-- Contenedor principal para la gestión de mesas -->
+<div class="container py-3 mesas">
+    <!-- Título de la sección -->
+    <h3 class="my-3">Gestión de Mesas</h3>
+
+    <!-- Botón para crear una nueva mesa -->
+    <button class="btn mt-3 mb-4" [routerLink]="['create']">Crear mesa</button>
+
+    <!-- Iteración para mostrar la lista de mesas -->
+    @for (table of tables; track table.id) {
+    <div class="row my-3">
+        <!-- Componente para mostrar cada mesa individualmente -->
+        <app-table-card [table]="table" (deleteEvent)="reloadData()" class="col" />
+    </div>
+    }
+
+    <!-- Mensaje mostrado si no hay mesas disponibles -->
+    @empty {
+    <p class="text-center">Cargando mesas...</p>
+    }
+</div>

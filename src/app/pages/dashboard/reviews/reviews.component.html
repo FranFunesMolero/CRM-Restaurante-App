@@ -1,0 +1,25 @@
+<!-- Encabezado del dashboard -->
+<app-header-dashboard />
+
+<!-- Sección principal para visualizar las reseñas -->
+<section class="container reviews pt-3">
+    <div class="mb-4">
+        <!-- Título de la sección -->
+        <h3 class="my-3">¡Visualiza las reseñas del local!</h3>
+
+        <!-- Descripción informativa -->
+        <p>Aquí podrás ver todas las reseñas que los clientes han dejado acerca de tu local.
+            De un vistazo podrás ver los comentarios y puntuaciones de tus usuarios.
+        </p>
+    </div>
+
+    <!-- Iteración sobre la lista de reseñas -->
+    @for (review of reviews; track review) {
+    <!-- Componente para mostrar cada reseña -->
+    <app-review-card [userid]="review.user_id" [rating]="review.rating" [comment]="review.comment"
+        [hasDeleteButton]="true" [reviewId]="review.id" (reviewDeleted)="loadReviews()" />
+    }
+
+    <!-- Botón para volver al inicio de la página -->
+    <button id="btn-top" class="btn" (click)="scrollToTop()">↑ Volver Arriba</button>
+</section>

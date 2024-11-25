@@ -1,0 +1,30 @@
+<!-- Encabezado del dashboard -->
+<app-header-dashboard />
+
+<!-- Contenedor principal para la gestión de reservas -->
+<div class="container gestion pt-3 my-4 d-ms-4">
+    <!-- Título de la sección -->
+    <h3 class="my-3">Gestión de Reservas</h3>
+
+    <!-- Descripción informativa de la sección -->
+    <p>Aquí encontrarás un listado de las reservas pendientes organizadas por fecha. Revisa los detalles,
+        actualiza el estado o realiza los ajustes necesarios para garantizar una experiencia impecable.
+        ¡Gracias por tu dedicación!
+    </p>
+
+    <!-- Mensaje mostrado si no hay reservas disponibles -->
+    @if (reservations.length === 0) {
+    <p class="mt-5">Cargando ...</p>
+    }
+
+    <!-- Grid para mostrar las tarjetas de reservas -->
+    <div class="row reservas">
+        <!-- Iteración sobre las reservas -->
+        @for(reservation of reservations; track reservation.id) {
+        <div class="col-12 col-lg-6">
+            <!-- Tarjeta individual para cada reserva -->
+            <app-reservations-card [reservation]="reservation"></app-reservations-card>
+        </div>
+        }
+    </div>
+</div>

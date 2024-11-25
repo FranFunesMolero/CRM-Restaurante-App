@@ -1,0 +1,42 @@
+<!-- Encabezado principal -->
+<header>
+    <app-header />
+</header>
+
+<!-- Contenedor principal -->
+<div class="container mt-5">
+    <div class="row">
+        <!-- Formulario para enviar una reseña -->
+        <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+            <!-- Campo de selección para la puntuación -->
+            <div class="form-group my-3 text-center">
+                <label for="exampleFormControlSelect1" class="mb-4">Puntuación</label>
+                <select formControlName="rating" class="form-control w-50 mx-auto" id="exampleFormControlSelect1">
+                    <!-- Opciones de puntuación del 1 al 5 -->
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+
+            <!-- Campo de texto para escribir comentarios -->
+            <div class="form-group my-3 text-center">
+                <label for="exampleFormControlTextarea1" class="mb-4">Valora nuestro servicio</label>
+                <textarea formControlName="comment" class="form-control" id="exampleFormControlTextarea1" rows="3">
+                </textarea>
+            </div>
+
+            <!-- Botón para enviar el formulario -->
+            <div class="form-group my-3 text-center">
+                <button class="btn" type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Pie de página -->
+<footer>
+    <app-footer />
+</footer>

@@ -1,0 +1,9 @@
+<div class="card" id="menu-cards">
+    <img class="img-fluid rounded" [src]="dish.image_url" [alt]="dish.name">
+    <div class="card-body">
+        <h5 class="card-title">{{ dish.name }}</h5>
+        <p class="card-text">Precio: {{ dish.price }}€</p>
+        <p class="card-text">{{ dish.description }}</p>
+        <p class="card-text">{{ dish.date }}</p>
+    </div>
+</div>

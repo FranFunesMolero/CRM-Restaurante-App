@@ -1,0 +1,58 @@
+<!-- Componente del encabezado del dashboard -->
+<app-header-dashboard />
+
+<!-- Sección principal -->
+<section>
+    <div class="container py-5">
+        <!-- Fila que centra el contenido tanto horizontal como verticalmente -->
+        <div class="row d-flex justify-content-center align-items-center">
+            <!-- Columna con un ancho específico para ajustar el diseño -->
+            <div class="col-xl-10">
+                <!-- Tarjeta con esquinas redondeadas y sombra -->
+                <div class="card rounded-3 text-black shadow">
+                    <div class="row">
+                        <!-- Columna para centrar el formulario en el espacio disponible -->
+                        <div class="col-lg-8 mx-auto">
+                            <div class="card-body p-md-5 mx-md-4 text-center">
+                                <!-- Título del formulario -->
+                                <h4 class="mb-4">Editar Usuario</h4>
+
+                                <!-- Formulario con enlace a un FormGroup y método de envío -->
+                                <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                                    <!-- Campo de entrada para el nombre -->
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="nombre" formControlName="nombre" class="form-control"
+                                            placeholder="Nombre">
+                                    </div>
+
+                                    <!-- Campo de entrada para el apellido -->
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="apellido" formControlName="apellido" class="form-control"
+                                            placeholder="Apellido">
+                                    </div>
+
+                                    <!-- Campo de entrada para el teléfono -->
+                                    <div class="form-outline mb-4">
+                                        <input type="tel" id="telefono" formControlName="telefono" class="form-control"
+                                            placeholder="Teléfono">
+                                    </div>
+
+                                    <!-- Menú desplegable para seleccionar el rol del usuario -->
+                                    <div class="form-outline mb-4">
+                                        <select id="role" formControlName="role" class="form-control">
+                                            <option value="client">Cliente</option>
+                                            <option value="admin">Administrador</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Botón para guardar los cambios -->
+                                    <button type="submit" class="btn">Guardar cambios</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

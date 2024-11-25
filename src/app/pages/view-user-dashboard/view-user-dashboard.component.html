@@ -1,0 +1,40 @@
+<!-- Encabezado del dashboard -->
+<app-header-dashboard></app-header-dashboard>
+
+<!-- Contenedor principal de la página -->
+<section class="container p-5 m-auto">
+    <div class="row">
+        <!-- Columna principal que contiene la información del usuario y el historial de reservas -->
+        <div class="col-12 d-flex flex-column gap-4">
+
+            <!-- Tarjeta de información del usuario -->
+            <div class="card" style="width: 100%;">
+                <div class="card-body p-4">
+                    <!-- Título de la tarjeta -->
+                    <h5 class="card-title text-center border-bottom w-50 m-auto">Informacion del usuario</h5>
+                    <!-- Detalles del usuario -->
+                    <p class="card-text mt-3"><strong>Nombre</strong>: {{ user?.name }} {{ user?.surname }}</p>
+                    <p class="card-text mt-3"><strong>Email</strong>: {{ user?.email }}</p>
+                    <p class="card-text"><strong>Phone</strong>: {{ user?.phone }}</p>
+                    <p class="card-text"><strong>Role</strong>: {{ user?.role }}</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta de historial de reservas -->
+            <div class="card" style="width: 100%;">
+                <div class="card-body p-4">
+                    <!-- Título de la tarjeta -->
+                    <h5 class="card-title text-center mb-4 border-bottom w-50 m-auto">Historial de reservas</h5>
+                    <!-- Lista de reservas del usuario -->
+                    @for (reservation of reservations; track reservation.id) {
+                    <app-reservations-card [reservation]="reservation"></app-reservations-card>
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Botón para volver a la lista de usuarios registrados -->
+    <a [routerLink]="['/dashboard', 'registered-users']" class="btn m-3 w-25">Volver</a>
+</section>
